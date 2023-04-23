@@ -95,4 +95,29 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        if(name.isEmpty()) {
+            setName("Data not available");
+        }
+        if (employer.getValue().isEmpty()){
+            getEmployer().setValue("Data not available");
+        }
+        if (location.getValue().isEmpty()) {
+            getLocation().setValue("Data not available");
+        }
+        if (positionType.getValue().isEmpty()) {
+            getPositionType().setValue("Data not available");
+        }
+        if (coreCompetency.getValue().isEmpty()) {
+            getCoreCompetency().setValue("Data not available");
+        }
+        return "\nID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n";
+    }
 }
